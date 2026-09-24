@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OncoScreen</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">✚</div>
+        <div>
+          <div class="brand-name">OncoScreen</div>
+          <div class="brand-sub">Machine Learning Screening Demo</div>
+        </div>
+      </div>
+     
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          
+          <h1>Breast Cancer Prediction<br><em>By-: FAIZAN SIDDIQUI  </em></h1>
+          <p>
+            Enter the 30 diagnostic measurements.
+            The model will return a probability and classification instantly.
+          </p>
+        </div>
+        <div class="hero-card">
+          <div class="hero-icon">⌁</div>
+          <strong>30</strong>
+          <span>diagnostic features</span>
+        </div>
+      </section>
+
+      <div class="notice">
+        <strong>Educational demo.</strong>
+        This model is not a medical diagnostic tool and must not be used to make
+        clinical decisions. Always consult a qualified healthcare professional.
+      </div>
+
+      <section class="workspace">
+        <div class="form-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Patient measurements</h2>
+              <p>Enter values from the diagnostic report.</p>
+            </div>
+            <button id="demoBtn" class="ghost-btn">Load demo</button>
+          </div>
+
+          <form id="predictionForm">
+            <div class="group">
+              <div class="group-title">
+                <span>01</span>
+                Mean measurements
+              </div>
+              <div id="meanFields" class="field-grid"></div>
+            </div>
+
+            <div class="group">
+              <div class="group-title">
+                <span>02</span>
+                Standard error measurements
+              </div>
+              <div id="seFields" class="field-grid"></div>
+            </div>
+
+            <div class="group">
+              <div class="group-title">
+                <span>03</span>
+                Worst measurements
+              </div>
+              <div id="worstFields" class="field-grid"></div>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" id="clearBtn" class="secondary-btn">Clear</button>
+              <button type="submit" class="primary-btn">
+                Analyze  <span>→</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <aside class="result-panel" id="resultPanel">
+          <div class="result-kicker">ANALYSIS RESULT</div>
+          <div id="emptyState" class="empty-state">
+            <div class="scan-icon">⌁</div>
+            <h3>Ready for analysis</h3>
+            <p>Enter the measurements and click <b>Analyze</b> to run the model.</p>
+          </div>
+
+          <div id="resultState" class="result-state hidden">
+            <div class="result-label">MODEL CLASSIFICATION</div>
+            <div id="resultBadge" class="result-badge"></div>
+
+            <div class="probability">
+              <div class="prob-top">
+                <span>Predicted probability</span>
+                <strong id="probabilityValue">0%</strong>
+              </div>
+              <div class="meter"><div id="meterFill"></div></div>
+            </div>
+
+            <div class="result-grid">
+              <div>
+                <span>Threshold</span>
+                <strong>25%</strong>
+              </div>
+              <div>
+                
+              </div>
+            </div>
+
+            <div id="resultMessage" class="result-message"></div>
+            <button id="againBtn" class="secondary-btn full">Run another analysis</button>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer>
+      <span>OncoScreen · Educational ML project</span>
+      <span>30-feature logistic regression</span>
+    </footer>
+  </div>
+
+  <script src="model-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

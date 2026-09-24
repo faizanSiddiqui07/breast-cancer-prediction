@@ -1,0 +1,15 @@
+Model: Logistic Regression from scratch
+Dataset: Breast Cancer Wisconsin (Diagnostic)
+Train/test split: 80/20
+Random state: 42
+Classification threshold: 0.25
+
+Accuracy : 0.9736842105263158
+Precision: 0.975609756097561
+Recall   : 0.9523809523809523
+F1 Score : 0.963855421686747
+ROC AUC  : 0.9847883597883598
+
+Confusion Matrix:
+[[71  1]
+ [ 2 40]]
